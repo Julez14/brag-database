@@ -1,0 +1,20 @@
+[
+  {
+    "query": "Tell me about mediating conflict between teammates",
+    "expected_source": "2026-01 Example Club — Committee Application.md",
+    "expected_evidence": "shared schedule",
+    "purpose": "Find the same behavioural story with different wording"
+  },
+  {
+    "query": "book swap six shifts",
+    "expected_source": "2026-01 Example Club — Committee Application.md",
+    "expected_evidence": "all six shifts",
+    "purpose": "Find exact event details"
+  },
+  {
+    "query": "Have I organized a rooftop astronomy event?",
+    "expected_source": "2026-01 Example Club — Committee Application.md",
+    "expected_evidence": "only a proposal",
+    "purpose": "Do not turn hypothetical plans into completed achievements"
+  }
+]

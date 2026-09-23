@@ -11,7 +11,7 @@ Every application adds to your library. A story you prepared for “Tell me abou
 1. **Write in Obsidian.** Keep one note per application or position you're preparing for. Include the questions, your answers, and any rough notes. Use prose or bullet points, whichever works for you.
 2. **Let it sync and index.** Your notes sync to your own Cloudflare storage, where AI Search makes them searchable by wording and meaning.
 3. **Ask Codex for help.** Give it the new question, the opportunity, and any word limit. It searches your cloud library and drafts an answer with references to the notes it used.
-4. **Review and save.** Edit the response, submit it yourself, and save the final version in Obsidian for next time.
+4. **Review your saved draft.** Codex saves the questions and answer in the appropriate Obsidian folder. Edit the response, submit it yourself, and keep the final version for next time.
 
 For example:
 
@@ -26,7 +26,12 @@ You keep control of your writing. The goal is to reuse real details, preserve yo
 | **Obsidian** | Gives you a familiar place to write and edit Markdown notes. |
 | **Remotely Save** | Syncs your notes across devices through Cloudflare, without Obsidian Sync. |
 | **Cloudflare R2** | Stores your notes in your own cloud bucket. |
-| **Cloudflare AI Search** | Finds relevant passages by wording and meaning, using Vectorize for semantic search. |
-| **Codex + a custom skill** | Connects to your cloud search through MCP and turns relevant past experiences into a tailored draft. |
+| **Cloudflare AI Search** | Indexes your Markdown and finds relevant passages by wording and meaning. |
+| **Cloudflare MCP** | Gives Codex authenticated access to your cloud library. |
+| **Codex + the brag-database skill** | Uses past experiences to draft answers and saves them in the right Obsidian folder. |
 
 Your notes need to finish uploading and indexing before Codex can find the latest changes. Obsidian handles local writing; cloud storage and search make the library available from other machines.
+
+## Get started
+
+[Follow the setup guide](docs/setup.md) to install the skill and connect your own Obsidian vault, Cloudflare R2 bucket, and AI Search instance. Obsidian Sync is not required. Personal notes stay outside this public repository.

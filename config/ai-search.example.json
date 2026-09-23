@@ -1,0 +1,19 @@
+{
+  "id": "brag-database",
+  "type": "r2",
+  "source": "brag-database",
+  "source_params": {
+    "prefix": "vault/",
+    "include_items": ["**/*.md"],
+    "exclude_items": ["**/Templates/**", "**/.obsidian/**", "**/.trash/**", "**/_*/**", "**/_*.md"]
+  },
+  "index_method": {"vector": true, "keyword": true},
+  "sync_interval": 3600,
+  "chunk": true,
+  "chunk_size": 768,
+  "chunk_overlap": 15,
+  "rewrite_query": false,
+  "reranking": false,
+  "cache": false,
+  "public_endpoint_params": {"enabled": false}
+}

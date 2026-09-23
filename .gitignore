@@ -18,3 +18,8 @@ coverage/
 vault/
 private-notes/
 .obsidian/
+
+# Machine-specific settings and Python output
+config.local.json
+__pycache__/
+*.pyc

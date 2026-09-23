@@ -4,7 +4,7 @@
 
 Build a personal, cloud-searchable memory of application answers and interview preparation. The user writes freely in Obsidian and expects future applications to benefit from previous work. Follow the latest explicit user instructions when they change this design.
 
-This repository starts with documentation only. Do not describe integrations, infrastructure, tests, or deployments as completed until they actually exist. Read README.md for the product breakdown and update it as implementation progresses.
+The repository now contains an installable drafting skill, a local note-save helper, an installer, configuration examples, setup documentation, and fictional tests. Do not describe cloud resources or live sync as verified until tested. Read README.md for the product breakdown.
 
 ## Documentation audience
 
@@ -16,8 +16,8 @@ README.md is a concise introduction for someone who wants to clone and use the p
 - Remotely Save syncs the vault with private Cloudflare R2. Do not introduce Obsidian Sync as a paid dependency.
 - R2 holds the canonical cloud source for retrieval. Device copies remain editable and synchronized.
 - Use Cloudflare AI Search connected to R2 for managed chunking, embeddings, semantic search, and keyword search. Semantic retrieval is an explicit requirement.
-- Use AI Search's MCP integration for Codex access. Add a custom server only if a verified requirement cannot be served by the existing interface.
-- A future Codex skill defines retrieval and answer drafting.
+- Use Cloudflare's maintained authenticated MCP server (`https://mcp.cloudflare.com/mcp`) to call the private AI Search API. It supports the required search without a custom Worker, custom MCP server, or public endpoint.
+- The `brag-database` skill defines cloud retrieval, answer drafting, and local saving.
 - Version 1 does not require D1, a separately managed Vectorize index, or automatic AI tag enrichment. AI Search handles the retrieval index.
 - Start with original Markdown and user-authored template fields. Markdown frontmatter and inline tags are not automatically filterable AI Search attributes. Add stable R2 object metadata only if retrieval evaluation proves that filtering would help.
 - Codex must search the cloud through MCP. Do not silently substitute local vault search or assume a machine-specific path.
@@ -36,7 +36,7 @@ Return relevant source passages with file/section references. Use semantic and k
 
 Codex should inspect source context, tailor the answer to the prompt and audience, respect length constraints, and preserve the user's voice. Never invent achievements, metrics, motivations, responsibilities, or outcomes. Distinguish personal contributions from team results. Cite sources outside the paste-ready draft and identify missing information. If cloud search fails, say so and retry or request the necessary input; do not fabricate retrieval results.
 
-Use AI Search to retrieve evidence and let Codex compose the final answer. Do not add an unnecessary second answer-generation step inside the search service. Save drafts/final answers only through a user-authorized workflow; do not submit applications automatically.
+Use AI Search to retrieve evidence and let Codex compose the final answer. Do not add an unnecessary second answer-generation step inside the search service. When asked to write responses to a new application, save the questions and drafts into the appropriate Obsidian folder in the same task unless the user opts out. Preserve unrelated text and manual edits during revisions. Do not mark drafts as submitted or submit applications automatically.
 
 ## Optional derived search documents
 
@@ -46,15 +46,15 @@ Start with original Markdown as AI Search input. Introduce one derived document 
 
 Consult current official Cloudflare documentation for APIs, MCP capabilities, billing, and sync behavior. Reuse relevant available skills. Avoid copying outdated APIs or assuming D1 is a native AI Search source.
 
-There are no package scripts or tests yet. When code is introduced, document its actual setup, required secrets, commands, and deployment state. Verify changes in proportion to risk: prioritize sync round-trips, stale/deleted sources, authenticated retrieval, and paraphrased questions finding the correct evidence. Use temporary or isolated fixtures for destructive/conflict cases.
+When code changes, document actual setup, required secrets, commands, and deployment state. Run `python3 -m unittest discover -s tests -v`. Verify sync round-trips, stale/deleted sources, authenticated retrieval, and paraphrased questions with fictional fixtures before relying on personal notes.
 
 Do not provision paid resources or deploy merely because this design describes them; follow the scope of the active user request. Finish authorized implementation and verification before reporting completion. Keep README.md and these instructions consistent with decisions actually made.
 
 ## Implementation roadmap
 
-- [ ] Configure a private R2 bucket and Remotely Save on a disposable test vault.
-- [ ] Connect AI Search to R2 and verify semantic and keyword retrieval through authenticated MCP access.
-- [ ] Write and install the Codex application-answer skill.
+- [x] Create a private R2 bucket and AI Search instance in the personal Cloudflare account.
+- [ ] Configure Remotely Save credentials and verify a disposable sync round-trip.
+- [x] Write and install the Codex application-answer skill.
 - [ ] Test cross-device sync, cloud-only retrieval, updates, deletions, and answer citations with fictional examples.
 - [ ] Evaluate retrieval on representative application and interview questions before adding filterable R2 metadata.
 - [ ] Bring in existing interview and application notes after the workflow is verified.
