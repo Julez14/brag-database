@@ -36,6 +36,8 @@ Return relevant source passages with file/section references. Use semantic and k
 
 Codex should inspect source context, tailor the answer to the prompt and audience, respect length constraints, and preserve the user's voice. Never invent achievements, metrics, motivations, responsibilities, or outcomes. Distinguish personal contributions from team results. Cite sources outside the paste-ready draft and identify missing information. If cloud search fails, say so and retry or request the necessary input; do not fabricate retrieval results.
 
+After drafting an application or interview answer, apply the available `humanizer` skill before saving or presenting it. Keep the final humanized version in the note, preserving supported facts, the user's voice, and all prompt and length constraints. Keep intermediate drafts and audit notes out of the application note unless the user asks to see the editing process. If the skill is unavailable, apply its guidance without claiming it was invoked.
+
 Use AI Search to retrieve evidence and let Codex compose the final answer. Do not add an unnecessary second answer-generation step inside the search service. When asked to write responses to a new application, save the questions and drafts into the appropriate Obsidian folder in the same task unless the user opts out. Preserve unrelated text and manual edits during revisions. Do not mark drafts as submitted or submit applications automatically.
 
 ## Optional derived search documents

@@ -12,6 +12,16 @@ python3 scripts/install.py --vault "$HOME/path/to/your-vault"
 
 The installer links the `brag-database` skill into Codex and stores machine-specific settings in `~/.config/brag-database/config.json`. It does not upload notes or create cloud resources. The default destination folders are Career, Clubs, Scholarships and Grants, Hackathons, School, and Interview Prep.
 
+## Recommended: install Humanizer
+
+Humanizer gives application and interview drafts a final editing pass to remove common AI writing patterns while retaining your facts and voice. Brag Database works without it, but uses it automatically when it is installed.
+
+In a Codex conversation, ask:
+
+> Use `$skill-installer` to install the skill from https://github.com/blader/humanizer
+
+Start a new Codex conversation after installation so it can discover the skill. [OpenAI’s skill documentation](https://learn.chatgpt.com/docs/build-skills) describes installing skills from other repositories with `$skill-installer`.
+
 ## Connect Cloudflare MCP
 
 ```sh

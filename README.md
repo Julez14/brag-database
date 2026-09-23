@@ -13,6 +13,8 @@ Every application adds to your library. A story you prepared for “Tell me abou
 3. **Ask Codex for help.** Give it the new question, the opportunity, and any word limit. It searches your cloud library and drafts an answer with references to the notes it used.
 4. **Review your saved draft.** Codex saves the questions and answer in the appropriate Obsidian folder. Edit the response, submit it yourself, and keep the final version for next time.
 
+For a final edit that removes common AI writing patterns while keeping your facts and voice, install the [Humanizer skill](https://github.com/blader/humanizer). Brag Database works without it, but uses it automatically when it is available in Codex.
+
 For example:
 
 > Use my brag database to draft a 200-word answer to “Describe a time you showed initiative” for a student leadership application.
@@ -29,6 +31,7 @@ You keep control of your writing. The goal is to reuse real details, preserve yo
 | **Cloudflare AI Search** | Indexes your Markdown and finds relevant passages by wording and meaning. |
 | **Cloudflare MCP** | Gives Codex authenticated access to your cloud library. |
 | **Codex + the brag-database skill** | Uses past experiences to draft answers and saves them in the right Obsidian folder. |
+| **Humanizer skill (recommended)** | Gives each draft a final editing pass that makes it sound more natural and less formulaic. |
 
 Your notes need to finish uploading and indexing before Codex can find the latest changes. Obsidian handles local writing; cloud storage and search make the library available from other machines.
 
