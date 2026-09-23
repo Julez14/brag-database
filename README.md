@@ -4,17 +4,11 @@ A personal library of application answers and interview preparation that becomes
 
 Write freely in Obsidian, sync Markdown to Cloudflare R2, and use Codex to retrieve relevant past experiences from the cloud and draft answers for jobs, clubs, scholarships, and programs.
 
-## Status
-
-This repository currently contains the project design and development instructions. Sync, the organizer Worker, AI Search, and the Codex skill still need to be configured or implemented. No cloud resources have been deployed by this repository.
-
-The organizer model is **undecided**. The plan is to select an inexpensive model through Workers AI after testing extraction quality on representative notes. GLM and DeepSeek are candidates, not commitments.
-
 ## How it works
 
 1. Write one Markdown file per application or interview preparation session for a position. Use headings for individual questions; normal prose, outlines, and rough notes are welcome.
 2. Remotely Save synchronizes the local Obsidian vault with R2 on each device.
-3. A scheduled cloud Worker enriches changed notes with tags and metadata using Workers AI.
+3. A scheduled Worker enriches changed notes with tags and metadata using Workers AI.
 4. Cloudflare AI Search indexes the R2 documents for semantic and keyword retrieval.
 5. A Codex skill searches through AI Search's MCP interface and uses retrieved source material to draft a new answer.
 
