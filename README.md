@@ -42,9 +42,6 @@ flowchart TD
 | AI Search MCP interface | Expose cloud search to Codex | Provides a reusable access point across machines; configure authenticated access. |
 | Codex | Draft application and interview answers | Uses retrieved evidence plus the new prompt, audience, and length constraints. |
 | Custom Codex skill | Define the answer-writing workflow | Specifies when and how to search, select examples, preserve voice, and report missing information. Still to be authored. |
-| D1 | Optional future structured database | Not required for version 1. Reconsider for relational queries, dashboards, or operational state if a concrete need emerges. |
-
-AI Search replaces the custom D1 full-text catalogue and manually maintained Vectorize pipeline discussed earlier. The organizer still needs to track its own processing state; AI Search only manages its indexing state.
 
 ## Notes and organization
 
