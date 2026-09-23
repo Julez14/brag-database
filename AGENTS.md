@@ -6,6 +6,10 @@ Build a personal, cloud-searchable memory of application answers and interview p
 
 This repository starts with documentation only. Do not describe integrations, infrastructure, tests, or deployments as completed until they actually exist. Read README.md for the product breakdown and update it as implementation progresses.
 
+## Documentation audience
+
+README.md is a concise introduction for someone who wants to clone and use the project. Explain the purpose, value, intended user workflow, and how the products work together in plain language. Keep planning, model selection, technical constraints, and roadmaps in this file. Add usable setup instructions to the README when installation actually works; do not invent commands or imply the documented design is already implemented. Preserve the public repository's user-facing focus.
+
 ## Accepted architecture
 
 - Obsidian edits ordinary local Markdown, usually one file per application or position's interview preparation. Preserve flexible writing; do not require a structured form or an AI conversation to add notes.
@@ -38,6 +42,8 @@ The repository contains software and documentation, not the personal vault. Use 
 
 AI Search manages its own indexing state, not the organizer's state. Document both separately. Metadata embedded in Markdown is not automatically a filterable AI Search attribute; explicitly map supported R2 object metadata when filters need it.
 
+Device sync, organizer scheduling, and AI Search ingestion operate independently. The plugin requires Obsidian to be running and able to execute; sleeping devices and mobile background restrictions delay uploads. Newly uploaded notes become searchable after indexing, and enrichment may arrive later. Configure timing rather than promise immediate availability. Two-way sync propagates deletions; retain recoverable history separately.
+
 ## Retrieval and drafting
 
 Return relevant source passages with file/section references. Use semantic and keyword retrieval to find differently phrased questions and exact names. Distinguish drafts, final answers, hypothetical preparation, and confirmed experiences.
@@ -57,3 +63,23 @@ Consult current official Cloudflare documentation for APIs, MCP capabilities, mo
 There are no package scripts or tests yet. When code is introduced, document its actual setup, required secrets, commands, and deployment state. Verify changes in proportion to risk: prioritize faithful extraction, repeated runs without loops, concurrent edits, sync round-trips, stale/deleted sources, authenticated retrieval, and paraphrased questions finding the correct evidence. Use temporary or isolated fixtures for destructive/conflict cases.
 
 Do not provision paid resources or deploy merely because this design describes them; follow the scope of the active user request. Finish authorized implementation and verification before reporting completion. Keep README.md and these instructions consistent with decisions actually made.
+
+## Implementation roadmap
+
+- [ ] Configure a private R2 bucket and Remotely Save on a disposable test vault.
+- [ ] Connect AI Search to R2 and verify semantic and keyword retrieval through authenticated MCP access.
+- [ ] Compare inexpensive Workers AI models for faithful extraction, latency, and cost; select a model separately from AI Search's embedding model.
+- [ ] Implement incremental organization, validated metadata, bounded retries, and safe writeback.
+- [ ] Write and install the Codex application-answer skill.
+- [ ] Test cross-device sync, cloud-only retrieval, updates, deletions, and answer citations with fictional examples.
+- [ ] Bring in existing interview and application notes after the workflow is verified.
+
+## Technical references
+
+- [Remotely Save](https://github.com/remotely-save/remotely-save)
+- [Cloudflare AI Search: how it works](https://developers.cloudflare.com/ai-search/concepts/how-ai-search-works/)
+- [AI Search R2 source and object metadata](https://developers.cloudflare.com/ai-search/configuration/data-source/r2/)
+- [AI Search overview and MCP integration](https://developers.cloudflare.com/ai-search/)
+- [Cloudflare Cron Triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/)
+- [R2 conditional operations](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/)
+- [Workers AI model catalogue](https://developers.cloudflare.com/workers-ai/models/)
