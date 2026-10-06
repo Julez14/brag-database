@@ -1,11 +1,15 @@
 ---
 name: brag-database
-description: Draft or revise job, club, scholarship, program, and hackathon application answers or behavioural interview preparation using the user's cloud brag database. Save an answer to their Obsidian vault only when they explicitly ask.
+description: Draft or revise applications and interview preparation using the user's cloud brag database, or import user-authored material into it. Save to the Obsidian vault only when explicitly asked.
 ---
 
 # Brag Database
 
-Use cloud evidence to write in the user's voice. Present each answer in the conversation for review. Drafting or revising an answer does not authorize creating or changing a vault note; save only when the user explicitly asks to save a specific answer. Never submit an application on their behalf.
+Use cloud evidence to write in the user's voice. Present each drafted answer in the conversation for review. Drafting or revising an answer does not authorize creating or changing a vault note; save only when the user explicitly asks. Never submit an application on their behalf.
+
+## Import user-authored material
+
+When the user asks to put something they wrote into the brag database, preserve the source text 1:1. Copy its wording, spelling, punctuation, order, links, and formatting; do not paraphrase, clean up, summarize, reorganize, or run the humanizer on it. Keep any required vault metadata outside the copied body, and do not add interpretive sections. If the source format must be converted to Markdown, preserve its text and structure as closely as the format allows. Check the saved body against the source before reporting completion. This rule applies to imports; drafting a new application answer remains a separate task.
 
 ## Locate the library
 
@@ -31,7 +35,7 @@ Keep the final answer ready to paste. Put source filenames/sections and unresolv
 
 ## Save only on request
 
-Only enter this section when the user explicitly instructs you to save an answer or revision. A request to write, improve, or humanize an answer alone is not a save request. If the user has reviewed multiple versions, use the one they identify; ask which version only if unclear. Do not silently regenerate the answer when the selected text is missing from the conversation. Follow an explicit destination first, then reuse the note for this application if it exists. Otherwise use the configured category folder:
+Only enter this section when the user explicitly instructs you to save an answer or revision, or to import source material. A request to write, improve, or humanize an answer alone is not a save request. If the user has reviewed multiple answer versions, use the one they identify; ask which version only if unclear. Do not silently regenerate the answer when the selected text is missing from the conversation. Follow an explicit destination first, then reuse an existing note for the same material if one exists. For application answers, otherwise use the configured category folder:
 
 - Jobs, internships, career programs → `career`
 - Club roles → `clubs`
@@ -42,7 +46,7 @@ Only enter this section when the user explicitly instructs you to save an answer
 
 Inspect existing path names and the request to resolve categories. Ask only when the destination is genuinely ambiguous. Use `YYYY-MM Organization — Role or Program.md`, with the current application month unless a different application date is supplied. Preserve the user's existing folder organization and note names.
 
-For a new note, include YAML properties `created`, `updated`, `type` (`application` or `interview-prep`), `organization`, `position`, and `status: draft`. Quote YAML string values safely. Include opportunity context, each exact question, its length limit if any, the answer, sources used, and unresolved details. Do not copy unrelated template example answers. Within the note, label draft answers and hypothetical proposals explicitly. Never change status to submitted without the user's confirmation.
+For a new application or interview note, include YAML properties `created`, `updated`, `type` (`application` or `interview-prep`), `organization`, `position`, and `status: draft`. Quote YAML string values safely. Include opportunity context, each exact question, its length limit if any, the answer, sources used, and unresolved details. Do not copy unrelated template example answers. Within the note, label draft answers and hypothetical proposals explicitly. Never change status to submitted without the user's confirmation. For an imported source, use the existing vault organization and keep the source body verbatim as specified above.
 
 Use `python3 scripts/vault.py save` with JSON on stdin:
 
