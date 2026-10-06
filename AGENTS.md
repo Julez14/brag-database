@@ -17,7 +17,7 @@ README.md is a concise introduction for someone who wants to clone and use the p
 - R2 holds the canonical cloud source for retrieval. Device copies remain editable and synchronized.
 - Use Cloudflare AI Search connected to R2 for managed chunking, embeddings, semantic search, and keyword search. Semantic retrieval is an explicit requirement.
 - Use Cloudflare's maintained authenticated MCP server (`https://mcp.cloudflare.com/mcp`) to call the private AI Search API. It supports the required search without a custom Worker, custom MCP server, or public endpoint.
-- The `brag-database` skill defines cloud retrieval, answer drafting, and local saving.
+- The `brag-database` skill defines cloud retrieval, answer drafting, and saving only on the user's explicit request.
 - Version 1 does not require D1, a separately managed Vectorize index, or automatic AI tag enrichment. AI Search handles the retrieval index.
 - Start with original Markdown and user-authored template fields. Markdown frontmatter and inline tags are not automatically filterable AI Search attributes. Add stable R2 object metadata only if retrieval evaluation proves that filtering would help.
 - Codex must search the cloud through MCP. Do not silently substitute local vault search or assume a machine-specific path.
@@ -36,9 +36,9 @@ Return relevant source passages with file/section references. Use semantic and k
 
 Codex should inspect source context, tailor the answer to the prompt and audience, respect length constraints, and preserve the user's voice. Never invent achievements, metrics, motivations, responsibilities, or outcomes. Distinguish personal contributions from team results. Cite sources outside the paste-ready draft and identify missing information. If cloud search fails, say so and retry or request the necessary input; do not fabricate retrieval results.
 
-After drafting an application or interview answer, apply the available `humanizer` skill before saving or presenting it. Keep the final humanized version in the note, preserving supported facts, the user's voice, and all prompt and length constraints. Keep intermediate drafts and audit notes out of the application note unless the user asks to see the editing process. If the skill is unavailable, apply its guidance without claiming it was invoked.
+After drafting an application or interview answer, apply the available `humanizer` skill before presenting it. Preserve supported facts, the user's voice, and all prompt and length constraints. If the skill is unavailable, apply its guidance without claiming it was invoked.
 
-Use AI Search to retrieve evidence and let Codex compose the final answer. Do not add an unnecessary second answer-generation step inside the search service. When asked to write responses to a new application, save the questions and drafts into the appropriate Obsidian folder in the same task unless the user opts out. Preserve unrelated text and manual edits during revisions. Do not mark drafts as submitted or submit applications automatically.
+Use AI Search to retrieve evidence and let Codex compose the final answer. Do not add an unnecessary second answer-generation step inside the search service. Present drafts in the conversation without creating or changing a Markdown note. Save the user's chosen answer in the appropriate Obsidian folder only after an explicit save instruction. Preserve unrelated text and manual edits during saved revisions. Do not mark drafts as submitted or submit applications automatically.
 
 ## Optional derived search documents
 

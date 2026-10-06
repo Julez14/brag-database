@@ -11,13 +11,15 @@ Every application adds to your library. A story you prepared for “Tell me abou
 1. **Write in Obsidian.** Keep one note per application or position you're preparing for. Include the questions, your answers, and any rough notes. Use prose or bullet points, whichever works for you.
 2. **Let it sync and index.** Your notes sync to your own Cloudflare storage, where AI Search makes them searchable by wording and meaning.
 3. **Ask Codex for help.** Give it the new question, the opportunity, and any word limit. It searches your cloud library and drafts an answer with references to the notes it used.
-4. **Review your saved draft.** Codex saves the questions and answer in the appropriate Obsidian folder. Edit the response, submit it yourself, and keep the final version for next time.
+4. **Choose what to keep.** Review the answer in the conversation. If you like it, tell Codex to save it in your Obsidian vault. You can edit and submit it yourself.
 
 For a final edit that removes common AI writing patterns while keeping your facts and voice, install the [Humanizer skill](https://github.com/blader/humanizer). Brag Database works without it, but uses it automatically when it is available in Codex.
 
 For example:
 
 > Use my brag database to draft a 200-word answer to “Describe a time you showed initiative” for a student leadership application.
+
+When the answer is ready, follow up with: “Save that answer to my vault.”
 
 You keep control of your writing. The goal is to reuse real details, preserve your voice, and flag missing information instead of inventing achievements. Cloud search makes the same library available from any machine with Codex connected to it.
 
@@ -30,7 +32,7 @@ You keep control of your writing. The goal is to reuse real details, preserve yo
 | **Cloudflare R2** | Stores your notes in your own cloud bucket. |
 | **Cloudflare AI Search** | Indexes your Markdown and finds relevant passages by wording and meaning. |
 | **Cloudflare MCP** | Gives Codex authenticated access to your cloud library. |
-| **Codex + the brag-database skill** | Uses past experiences to draft answers and saves them in the right Obsidian folder. |
+| **Codex + the brag-database skill** | Uses past experiences to draft answers and saves only the answers you choose. |
 | **Humanizer skill (recommended)** | Gives each draft a final editing pass that makes it sound more natural and less formulaic. |
 
 Your notes need to finish uploading and indexing before Codex can find the latest changes. Obsidian handles local writing; cloud storage and search make the library available from other machines.

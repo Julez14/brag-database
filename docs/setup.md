@@ -47,7 +47,7 @@ Create a private R2 bucket. Create R2 S3 credentials scoped to that bucket with 
 
 Put the access key and secret into the plugin settings only. Start with a disposable test vault and prefix, verify upload/download/edit/rename/delete behavior, then use `vault/` for your real notes. After the first successful sync, enable sync on save, five-minute automatic sync, and a startup sync delay. Obsidian must be open and awake for local changes to upload.
 
-Two-way sync propagates deletions, so keep a separate backup. Avoid editing the same note on two devices at once.
+Once a note has synced, deleting it from the local vault deletes its R2 copy on the next successful bidirectional sync. Remotely Save can block a large batch of changes under its deletion and modification protection setting. AI Search removes the deleted note from results after its next indexing job. Keep a separate backup, and avoid editing the same note on two devices at once.
 
 ## Configure AI Search
 
@@ -69,11 +69,11 @@ R2 upload and AI Search indexing are separate. A newly saved note becomes search
 
 Open a new Codex conversation and ask:
 
-> Use my brag database to answer “Tell us about a time you handled disagreement” for the Example Club committee application. Maximum 200 words. Save it in my vault.
+> Use my brag database to answer “Tell us about a time you handled disagreement” for the Example Club committee application. Maximum 200 words.
 
-Codex searches the configured cloud index, drafts from supported evidence, and saves the questions and answer in the appropriate Obsidian folder. It marks new work as a draft and never submits an application.
+Codex searches the configured cloud index and drafts from supported evidence. Review the answer in the conversation. When you want to keep it, say “Save that answer to my vault.” Codex then saves the question and chosen answer in the appropriate Obsidian folder with `status: draft`. It never submits an application.
 
-On another device, install the skill, configure Remotely Save with the same bucket/prefix, and authenticate Cloudflare MCP. Cloud retrieval is shared; local paths only determine where new drafts are saved.
+On another device, install the skill, configure Remotely Save with the same bucket/prefix, and authenticate Cloudflare MCP. Cloud retrieval is shared; local paths determine where chosen answers are saved when requested.
 
 ## Troubleshooting
 
