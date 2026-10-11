@@ -1,0 +1,192 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}   % unlocks proper text glyphs for < and >
+\usepackage{textcomp}      % provides \textless and \textgreater
+\usepackage{tabularx}
+\input{glyphtounicode}
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\labelitemi}{$\bullet$}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{4pt}]
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-10pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{0}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, label=$\bullet$]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-10pt}}
+
+% Experience subheading: Position - Company (left), Location/Date (right)
+\newcommand{\resumeExp}[4]{
+  \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \textit{\small\ - #3} & #2 \\
+      & \textit{\small #4} \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+% Experience subheading: Position - Company (left), Date (right, non-italic)
+\renewcommand{\resumeExp}[4]{%
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} \textit{\small\ - #3} & {\small #4} \\
+  \end{tabular*}\vspace{-8pt}
+}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Julian Laxman} \\ \vspace{1pt}
+    \small 647-988-6145 $|$ \href{mailto:julian.laxman@gmail.com}{\underline{julian.laxman@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/julian-laxman/}{\underline{linkedin.com/in/julian-laxman}} $|$
+    \href{https://github.com/Julez14}{\underline{github.com/Julez14}}
+    $|$
+    \href{https://devpost.com/juelzlax}{\underline{devpost.com/juelzlax}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+    \vspace{-4mm}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Western Ontario}{London, ON}
+      {BSc. Specialization in Computer Science}{Expected Graduation: Spring 2028}
+  \resumeSubHeadingListEnd
+
+\vspace{0.0001pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+    \vspace{-4mm}
+  \resumeSubHeadingListStart
+\resumeExp
+  {Product Manager Intern}{Austin, TX}{Cloudflare}{May 2026 -- August 2026}
+\resumeItemListStart
+  \resumeItem{Launched BotBase for Operators from 0 to 1, one of few intern projects released publicly, by owning MVP scope and cross-functional delivery with engineering and design; sole-authored the \href{https://blog.cloudflare.com/botbase-for-operators/}{\underline{Cloudflare launch blog}}}
+  \resumeItem{Defined the product roadmap through a comprehensive yet precise MVP PRD by synthesizing 50+ user-interviews into user stories, engineering priorities, and explicit launch tradeoffs}
+  \resumeItem{Enabled technical review of 5 operator workflows by prototyping a submission-history API with account-scoped access, API Gateway wiring, and AI-assisted UI flows for technical product demonstrations}
+ \resumeItem{Aligned product, engineering, verification, and support teams on MVP scope by leading recurring product reviews and delivering 4 stakeholder updates translating customer findings and technical constraints into launch priorities}
+  \resumeItem{Improved traffic-outcome visibility through a live Business Insights feature update by translating enterprise customer feedback into a PRD, clarifying HTTP-response-based outcomes, and adding mixed-outcome counts with engineering}
+\resumeItemListEnd
+
+    \resumeExp
+      {Founder}{Toronto, ON}{Sana (prev. IngredientGPT)}{Apr 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Conducted 50+ user interviews to identify pain points in ingredient safety analysis, translating insights into a concise PRD and product roadmap that drove end-to-end product development from 0 to 1}
+        \resumeItem{Led go-to-market strategy and product launch on the App Store, achieving 1,000+ downloads within one month and growing to \$1,000 MRR through iterative feature prioritization based on user feedback}
+        \resumeItem{Analyzed A/B testing results and user engagement funnels in PostHog and Superwall to guide product decisions, increasing retention by 25\% and optimizing conversion rates}
+      \resumeItemListEnd
+      
+    \resumeExp
+      {Product Manager Intern}{Remote}{LaunchPath Inc.}{Mar 2025 -- Aug 2025}
+      \resumeItemListStart
+        \resumeItem{Interviewed stakeholders and analyzed business plans from early-stage founders to transform visions into three fully functional MVP prototypes across mobile, web, and e-commerce verticals}
+        \resumeItem{Defined product vision and gathered requirements for a journaling app; prioritized features through user research and delivered real-time sync capabilities with sub-100ms latency}
+        \resumeItem{Owned product lifecycle for a regulatory report management platform, translating stakeholder needs into technical specifications and shipping a unified export engine that reduced report generation time by 60\%}
+        \resumeItem{Launched an AI-designed gifting platform by conducting market analysis and competitive research, defining payment integration requirements and fulfillment workflows}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------LEADERSHIP & ACTIVITIES-----------
+\section{Leadership \& Activities}
+    \vspace{-4mm}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Hack Western: President}}{Apr 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Raised \$50,000+ in sponsorships from Accenture, Scotiabank, P\&G, Meta, and more by leading sponsor outreach, negotiating partnership terms, and managing event budgets}
+            \resumeItem{Leading a team of 29 to coordinate logistics and event planning for 450+ attendees, resolving critical issues in real-time and ensuring seamless execution of Canada's 3rd largest hackathon}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+    {\textbf{Ivey Product Society: Director, Product Management Fellowship}}{Oct 2025 -- Apr 2026}
+    \resumeItemListStart
+      \resumeItem{Designed and facilitated a 10-week PM Fellowship curriculum for 30 fellows, delivering weekly workshops on JTBD, user segmentation, pain point analysis, ideation, feature prioritization, tradeoffs, success metrics, value proposition, MVPs, and prototyping}
+      \resumeItem{Mentored fellows through end-to-end capstone projects — each producing a full PRD, Figma prototype, and pitch deck for a new feature on products from Google, Apple, OpenAI, Meta, Notion, Netflix, Coinbase, Spotify, and more}
+    \resumeItemListEnd
+    \resumeSubHeadingListEnd
+%-----------SKILLS-----------
+\section{Skills and Interests}
+\vspace{-3mm}
+\begin{itemize}[leftmargin=0.0in, label={}]
+  \small{\item{
+    \textbf{Product}{: Customer Discovery, Product Strategy \& Roadmapping, PRDs, User Stories, Feature Prioritization, B2B Software, Product Launches, Go-to-Market Strategy, Cross-Functional Collaboration, Technical Communication, Jira} \\
+    \textbf{Analytics}{: SQL, A/B Testing, KPIs \& OKRs, Engagement \& Adoption Metrics, Funnel Analysis, Customer Feedback Analysis, Data-Driven Decision Making, PostHog, Superwall} \\
+    \textbf{Technical}{: Python, TypeScript/JavaScript, React, Swift, API Design, REST APIs, API Gateways, OAuth2, HTTP, DNS, LLMs, AI-Assisted Prototyping, Figma, GitHub} \\
+    \textbf{Cloud \& Data}{: Cloudflare, PostgreSQL, Supabase, MySQL, Redis} \\
+    \textbf{Interests}{: Muay Thai, Brazilian Jiu-Jitsu, Hackathons, Fitness, Skiing}
+  }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

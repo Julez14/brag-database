@@ -15,6 +15,12 @@ Every application adds to your library. A story you prepared for “Tell me abou
 
 For a final edit that removes common AI writing patterns while keeping your facts and voice, install the [Humanizer skill](https://github.com/blader/humanizer). Brag Database works without it, but uses it automatically when it is available in Codex.
 
+## Optional resume builder
+
+The [resume-builder skill](skills/resume-builder/SKILL.md) uses the same cloud library to tailor an Overleaf-ready LaTeX resume to a job description. It follows the supplied Jake Gutierrez template, scores each bullet by the number of distinct job-description keywords it contains, and reports those scores outside the resume. It keeps claims grounded in your notes and puts relevant, supported keywords that do not fit in bullets in Skills.
+
+Install it with `python3 scripts/install.py --vault "/path/to/your-vault" --with-resume-builder` after [setting up Brag Database](docs/setup.md). The installer also configures a `Resumes` folder. Creating a resume does not save it to the vault. Ask explicitly to save or import one; the skill converts the selected resume to Markdown in `Resumes/` for future retrieval.
+
 For example:
 
 > Use my brag database to draft a 200-word answer to “Describe a time you showed initiative” for a student leadership application.
@@ -33,6 +39,7 @@ You keep control of your writing. The goal is to reuse real details, preserve yo
 | **Cloudflare AI Search** | Indexes your Markdown and finds relevant passages by wording and meaning. |
 | **Cloudflare MCP** | Gives Codex authenticated access to your cloud library. |
 | **Codex + the brag-database skill** | Uses past experiences to draft answers and saves only the answers you choose. |
+| **Resume builder (optional)** | Builds a tailored LaTeX resume from the same evidence and saves a Markdown copy only when asked. |
 | **Humanizer skill (recommended)** | Gives each draft a final editing pass that makes it sound more natural and less formulaic. |
 
 Your notes need to finish uploading and indexing before Codex can find the latest changes. Obsidian handles local writing; cloud storage and search make the library available from other machines.

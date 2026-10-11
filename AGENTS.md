@@ -18,6 +18,7 @@ README.md is a concise introduction for someone who wants to clone and use the p
 - Use Cloudflare AI Search connected to R2 for managed chunking, embeddings, semantic search, and keyword search. Semantic retrieval is an explicit requirement.
 - Use Cloudflare's maintained authenticated MCP server (`https://mcp.cloudflare.com/mcp`) to call the private AI Search API. It supports the required search without a custom Worker, custom MCP server, or public endpoint.
 - The `brag-database` skill defines cloud retrieval, answer drafting, and saving only on the user's explicit request.
+- The optional `resume-builder` skill uses the same cloud evidence and LaTeX layout. Only an explicit request to save or import a resume permits a Markdown note in the personal vault's `Resumes` folder.
 - Version 1 does not require D1, a separately managed Vectorize index, or automatic AI tag enrichment. AI Search handles the retrieval index.
 - Start with original Markdown and user-authored template fields. Markdown frontmatter and inline tags are not automatically filterable AI Search attributes. Add stable R2 object metadata only if retrieval evaluation proves that filtering would help.
 - Codex must search the cloud through MCP. Do not silently substitute local vault search or assume a machine-specific path.
@@ -26,7 +27,7 @@ README.md is a concise introduction for someone who wants to clone and use the p
 
 Keep infrastructure minimal. This project currently needs no separate web editor, application dashboard, Gmail integration, Notion connector, or browser extension. These are possible future features, not accepted implementation requirements.
 
-The repository contains software and documentation, not the personal vault. Use fictional fixtures; never commit real applications, private notes, API tokens, plugin credential files, or account secrets. Keep instance names, prefixes, and resource bindings configurable. Do not publish an unauthenticated personal search endpoint.
+The repository contains software and documentation, not the personal vault. The user-provided LaTeX resume template is an asset for the optional skill; do not commit other real applications, private notes, API tokens, plugin credential files, or account secrets. Use fictional fixtures. Keep instance names, prefixes, and resource bindings configurable. Do not publish an unauthenticated personal search endpoint.
 
 Device sync and AI Search ingestion operate independently. The plugin requires Obsidian to be running and able to execute; sleeping devices and mobile background restrictions delay uploads. Newly uploaded notes become searchable after indexing. Configure timing rather than promise immediate availability. Two-way sync propagates deletions; retain recoverable history separately.
 

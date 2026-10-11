@@ -10,7 +10,9 @@ cd brag-database
 python3 scripts/install.py --vault "$HOME/path/to/your-vault"
 ```
 
-The installer links the `brag-database` skill into Codex and stores machine-specific settings in `~/.config/brag-database/config.json`. It does not upload notes or create cloud resources. The default destination folders are Career, Clubs, Scholarships and Grants, Hackathons, School, and Interview Prep.
+The installer links the `brag-database` skill into Codex and stores machine-specific settings in `~/.config/brag-database/config.json`. It does not upload notes or create cloud resources. The default destination folders are Career, Clubs, Scholarships and Grants, Hackathons, School, Interview Prep, and Resumes.
+
+To add the optional resume builder, run the same command with `--with-resume-builder`. It links `resume-builder` alongside the main skill. Open a new Codex conversation so it can discover the add-on. Resumes are saved to the vault only when you explicitly request it; saved copies are Markdown.
 
 ## Recommended: install Humanizer
 
