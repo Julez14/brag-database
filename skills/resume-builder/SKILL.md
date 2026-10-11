@@ -13,6 +13,8 @@ Read the sibling `brag-database` skill and its `references/cloud-search.md`, the
 
 For a job-tailored resume, ask for the job description or a job link if neither is available. If a link is supplied, read the posting. Identify distinct, meaningful keywords and phrases in the description, including responsibilities, methods, tools, domain terms, and qualifications. Prefer requirements that are repeated or central to the role. Group obvious variants under one canonical keyword (for example, `A/B tests` and `A/B testing`), so scoring does not reward repetition.
 
+Adjust the Education section's expected graduation date to **April 2027** or **April 2028**, choosing the user's graduation timeline that satisfies the job description's required graduation window. If both dates qualify or the posting gives no graduation requirement, use the user's current expected date, defaulting to April 2028 unless updated. If neither qualifies, flag the eligibility mismatch. These dates should reflect a timeline the user can actually pursue; ask for confirmation only if current evidence conflicts with the selected timeline.
+
 ## Draft and score
 
 Choose the most relevant supported experiences and accomplishments. Write concise, specific bullets. Where evidence permits, express the result, its measure, and the action that caused it (XYZ); vary their order for natural reading. Do not add an unsupported number merely to complete XYZ. Include a public link to a project, launch, publication, or profile when one is available and relevant; use accessible `\href{...}{\underline{...}}` links in LaTeX. Do not link to private source notes.
